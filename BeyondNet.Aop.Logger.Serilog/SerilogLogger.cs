@@ -1,8 +1,7 @@
-﻿using System;
-using BeyondNet.Aop.Aspects.Models;
+﻿using BeyondNet.Aop.Aspects.Models;
+using BeyondNet.Aop.Aspects.Interfaces;
 using BeyondNet.Aop.Core.Interfaces;
-using Serilog;
-using Serilog.Events;
+using SeriLog = Serilog;
 
 namespace BeyondNet.Aop.Logger.Serilog
 {
@@ -26,7 +25,7 @@ namespace BeyondNet.Aop.Logger.Serilog
 
         public void OnExit(IJoinPoint joinpoint, Return @return, string requestid, long duration)
         {
-            var log = Log.ForContext("Return", @return, true);
+            var log = SeriLog.Log.ForContext("Return", @return, true);
             if (!string.IsNullOrWhiteSpace(requestid))
             {
                 log.Debug(OnExitTemplateWithDurationAndRequestId, joinpoint.TargetType.Name, joinpoint.MethodInfo.Name, requestid, duration);
@@ -43,24 +42,24 @@ namespace BeyondNet.Aop.Logger.Serilog
             {
                 if (arguments != null && arguments.Length>0)
                 {
-                    var log = Log.ForContext("Arguments", arguments, true);
+                    var log = SeriLog.Log.ForContext("Arguments", arguments, true);
                     log.Debug(OnEntryTemplateWithRequestId, joinpoint.TargetType.Name, joinpoint.MethodInfo.Name, requestid);
                 }
                 else
                 {
-                    Log.Debug(OnEntryTemplateWithRequestId, joinpoint.TargetType.Name, joinpoint.MethodInfo.Name, requestid);
+                    SeriLog.Log.Debug(OnEntryTemplateWithRequestId, joinpoint.TargetType.Name, joinpoint.MethodInfo.Name, requestid);
                 }
             }
             else
             {
                 if (arguments != null && arguments.Length > 0)
                 {
-                    var log = Log.ForContext("Arguments", arguments, true);
+                    var log = SeriLog.Log.ForContext("Arguments", arguments, true);
                     log.Debug(OnEntryTemplate, joinpoint.TargetType.Name, joinpoint.MethodInfo.Name);
                 }
                 else
                 {
-                    Log.Debug(OnEntryTemplate, joinpoint.TargetType.Name, joinpoint.MethodInfo.Name);
+                    SeriLog.Log.Debug(OnEntryTemplate, joinpoint.TargetType.Name, joinpoint.MethodInfo.Name);
                 }
             }
         }
@@ -69,11 +68,11 @@ namespace BeyondNet.Aop.Logger.Serilog
         {
             if (!string.IsNullOrWhiteSpace(requestid))
             {
-                Log.Error(ex, OnExceptionTemplateWithRequestId, joinpoint.TargetType.Name, joinpoint.MethodInfo.Name, requestid);
+                SeriLog.Log.Error(ex, OnExceptionTemplateWithRequestId, joinpoint.TargetType.Name, joinpoint.MethodInfo.Name, requestid);
             }
             else
             {
-                Log.Error(ex, OnExceptionTemplate, joinpoint.TargetType.Name, joinpoint.MethodInfo.Name);
+                SeriLog.Log.Error(ex, OnExceptionTemplate, joinpoint.TargetType.Name, joinpoint.MethodInfo.Name);
             }
         }
 
@@ -81,17 +80,17 @@ namespace BeyondNet.Aop.Logger.Serilog
         {
             if (!string.IsNullOrWhiteSpace(requestid))
             {
-                Log.Debug(OnExitTemplateWithDurationAndRequestId, joinpoint.TargetType.Name, joinpoint.MethodInfo.Name, requestid, duration);
+                SeriLog.Log.Debug(OnExitTemplateWithDurationAndRequestId, joinpoint.TargetType.Name, joinpoint.MethodInfo.Name, requestid, duration);
             }
             else
             {
-                Log.Debug(OnExitTemplateWithDuration, joinpoint.TargetType.Name, joinpoint.MethodInfo.Name, duration);
+                SeriLog.Log.Debug(OnExitTemplateWithDuration, joinpoint.TargetType.Name, joinpoint.MethodInfo.Name, duration);
             }
         }
 
         public void OnExit(IJoinPoint joinpoint, Return @return, string requestid)
         {
-            var log = Log.ForContext("Return", @return, true);
+            var log = SeriLog.Log.ForContext("Return", @return, true);
             if (!string.IsNullOrWhiteSpace(requestid))
             {
                 log.Debug(OnExitTemplateWithRequestId, joinpoint.TargetType.Name, joinpoint.MethodInfo.Name, requestid);
@@ -106,17 +105,12 @@ namespace BeyondNet.Aop.Logger.Serilog
         {
             if (!string.IsNullOrWhiteSpace(requestid))
             {
-                Log.Debug(OnExitTemplateWithRequestId, joinpoint.TargetType.Name, joinpoint.MethodInfo.Name, requestid);
+                SeriLog.Log.Debug(OnExitTemplateWithRequestId, joinpoint.TargetType.Name, joinpoint.MethodInfo.Name, requestid);
             }
             else
             {
-                Log.Debug(OnExitTemplate, joinpoint.TargetType.Name, joinpoint.MethodInfo.Name);
+                SeriLog.Log.Debug(OnExitTemplate, joinpoint.TargetType.Name, joinpoint.MethodInfo.Name);
             }
-        }
-
-        public void Write(LogEvent logEvent)
-        {
-            throw new NotImplementedException();
         }
     }
 }
