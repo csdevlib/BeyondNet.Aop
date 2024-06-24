@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeyondNet.Aop", "BeyondNet.Aop\BeyondNet.Aop.csproj", "{923CA45A-3945-4C86-8CC0-7398D4BD5432}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeyondNet.Aop", "BeyondNet.Aop\BeyondNet.Aop.csproj", "{923CA45A-3945-4C86-8CC0-7398D4BD5432}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeyondNet.Aop.Installer", "BeyondNet.Aop.Installer\BeyondNet.Aop.Installer.csproj", "{9377E1E6-97AF-4105-AD2C-08537B9C7680}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeyondNet.Aop.Installer", "BeyondNet.Aop.Installer\BeyondNet.Aop.Installer.csproj", "{9377E1E6-97AF-4105-AD2C-08537B9C7680}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeyondNet.Aop.Logger", "BeyondNet.Aop.Logger\BeyondNet.Aop.Logger.csproj", "{7B2FC936-5291-43DE-830A-3AE41762C89F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeyondNet.Aop.Logger", "BeyondNet.Aop.Logger\BeyondNet.Aop.Logger.csproj", "{7B2FC936-5291-43DE-830A-3AE41762C89F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeyondNet.Aop.Logger.Serilog", "BeyondNet.Aop.Logger.Serilog\BeyondNet.Aop.Logger.Serilog.csproj", "{C6702B06-EB9A-444C-ACA6-DC55B5C59BB2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeyondNet.Aop.Logger.Serilog", "BeyondNet.Aop.Logger.Serilog\BeyondNet.Aop.Logger.Serilog.csproj", "{C6702B06-EB9A-444C-ACA6-DC55B5C59BB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeyondNet.Aop.Test", "BeyondNet.Aop.Test\BeyondNet.Aop.Test.csproj", "{4C2881BF-D731-491D-B9A9-01CC5411793B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeyondNet.Aop.Test", "BeyondNet.Aop.Test\BeyondNet.Aop.Test.csproj", "{4C2881BF-D731-491D-B9A9-01CC5411793B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeyondNet.Aop.Demo", "BeyondNet.Aop.Demo\BeyondNet.Aop.Demo.csproj", "{CC004848-B344-4613-877D-E4D916E73A0E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{4C2881BF-D731-491D-B9A9-01CC5411793B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C2881BF-D731-491D-B9A9-01CC5411793B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C2881BF-D731-491D-B9A9-01CC5411793B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC004848-B344-4613-877D-E4D916E73A0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC004848-B344-4613-877D-E4D916E73A0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC004848-B344-4613-877D-E4D916E73A0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC004848-B344-4613-877D-E4D916E73A0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
